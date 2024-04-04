@@ -15,6 +15,9 @@ Add text to your creations with options for fonts, sizes, and styles.
 # Export Functionality: 
 Save your drawings in different formats such as SVG, PNG, or JPEG.
 
+# Video Showcase 
+[video](https://drive.google.com/file/d/143DDdSPlVz_W9ln1BDdGyMCKlmPV7IIP/view)
+
 
 
 
