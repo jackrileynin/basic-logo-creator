@@ -17,7 +17,7 @@ return inquirer
         {
             type: "text",
             name: "color",
-            message: "What color would you like your shape to be? (use a hex code)",
+            message: "What color would you like your shape to be?"
         },
 
         {
