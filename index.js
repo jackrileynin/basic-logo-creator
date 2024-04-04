@@ -29,11 +29,16 @@ return inquirer
  ]);
 };
 // the switch statement does not need a break statement since the result needs to be returned to be used in a promise
+
 const createShape = (answer) => { 
+    if (answer.text.length > 3) {
+        console.log(chalk.red("Text must be less than 3 characters"));
+    } else {
     switch (answer.shape) {
 
          case "triangle":
             answer.color = answer.color || "#000000";
+            
          return new Triangle().returnShape(answer.color, answer.text);
 
      case "circle":
@@ -49,6 +54,7 @@ const createShape = (answer) => {
         default:
             throw new Error("Invalid shape selected");
     }
+    }
 }; 
 // modulerizes the CIL prompt and the logic that passes the user's input to the appropriate class method
 // then uses the "then" method to that handles the promise returned by the inquirer prompt and the promise returned by the class method
@@ -57,6 +63,7 @@ makeShape()
     .then(createShape)
      .then((result) => {
         console.log(result);
+    
         return fs.writeFile("shape.svg", result);
     })
     .then(() => {
